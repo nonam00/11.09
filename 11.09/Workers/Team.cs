@@ -5,6 +5,7 @@ public class Team : IWorker
     static int work_id = 0; //work stage
     private House.House house { get; set; }
     private List<Worker> workers = new List<Worker>();
+    private bool previous_stage = false;
 
     public Team(House.House house)
     {
@@ -14,6 +15,8 @@ public class Team : IWorker
     }
     public void Work()
     {
-        workers[work_id++].Work();
+        if (work_id==0 || previous_stage)
+            workers[work_id++].Work();
+        previous_stage = true;
     }
 }
