@@ -1,5 +1,5 @@
 ﻿namespace _11._09.House;
 
-public class Wall
+public class Wall : IPart
 {
 }
