@@ -7,5 +7,11 @@ public class TeamLeader : IWorker
 
     public TeamLeader(House.House house) => this.house = house;
 
-    public void Work() => Console.WriteLine(house.Status()); //Creates a work report and outputs it to the console
+    public void Work() //Creates a work report and outputs it to the console
+    {
+        if (house.Status() == String.Empty)
+            Console.WriteLine("Construction of the house hasn't started yet\n");
+        else
+            Console.WriteLine(house.Status() + "\n"); 
+    }
 }

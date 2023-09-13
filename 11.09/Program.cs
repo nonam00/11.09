@@ -1,7 +1,6 @@
 ﻿using _11._09.House;
 using _11._09.Workers;
 
-
 House house = new House();
 
 IWorker teamLeader = new TeamLeader(house);

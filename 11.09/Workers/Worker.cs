@@ -1,12 +1,16 @@
 ﻿namespace _11._09.Workers;
 public class Worker : IWorker
 {
+    private static int global_id = 0;
     public int Id { get; set; }
+
+    public bool Status { get; set; }
     private House.House house { set; get; }
-    public Worker(int id, House.House house)
+    public Worker(House.House house)
     {
-        Id = id;
+        Id = global_id++;
         this.house = house;
+        Status = false;
     }
 
     public void Work()
@@ -21,6 +25,6 @@ public class Worker : IWorker
             house.Windows.Add(new House.Window());
         else if (Id==10)
             house.Door = new();
-
+        Status = true;
     }
 }
