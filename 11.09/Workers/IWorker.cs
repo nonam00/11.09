@@ -1,6 +1,7 @@
-﻿namespace _11._09.Workers;
+﻿using _11._09.House;
+
+namespace _11._09.Workers;
 public interface IWorker
 {
-    static Report report { get; } = new();
     void Work();
 }
